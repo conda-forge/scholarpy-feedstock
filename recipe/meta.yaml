@@ -1,13 +1,13 @@
 {% set name = "scholarpy" %}
-{% set version = "0.0.1" %}
+{% set version = "0.1.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: b7bcf48f05191b0ca606b1836fcdc81ff341c0b5e3996b1eedf96900d5e955ca
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fdce08153f66cf17087603f9934379c6975aa1cb1ae1926a07169e22de416a59
 
 build:
   number: 0
@@ -31,7 +31,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "A Python package for searching journal publications and researchers"
+  summary: A Python package for searching journal publications and researchers
   doc_url: https://scholarpy.gishub.org
   dev_url: https://github.com/giswqs/scholarpy
 
