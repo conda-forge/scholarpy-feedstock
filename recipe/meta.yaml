@@ -6,25 +6,27 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fdce08153f66cf17087603f9934379c6975aa1cb1ae1926a07169e22de416a59
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - dimcli
     - leafmap
     - plotly
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - scholarpy
 
